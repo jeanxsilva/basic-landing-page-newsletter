@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>mais1 - Newsletter de tecnologia</title>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/x-icon" href="./src/images/logo-2.ico">
+
+    <script type="text/javascript" src="src/js/main.js"></script>
+    <link rel="stylesheet" href="src/css/style.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+</head>
+
+<body>
+    <section id="main-screen">
+        <div class="newsletter-details">
+            <h1 class="newsletter-title">Fique atualizado!</h1>
+            <p class="newsletter-description">
+                Junte-se a mais de 130,000 desenvolvedores que se mantém atualizado diariamente com os mais variados
+                tópicos sobre tecnologia, tais como:
+            </p>
+            <div class="newsletter-advantage-list">
+                <div class="newsletter-advantage">
+                    <i class="fa-solid fa-check"></i>
+                    <span>O mundo tecnologico em constante mudança.</span>
+                </div>
+                <div class="newsletter-advantage">
+                    <i class="fa-solid fa-check"></i>
+                    <span>Inovação e soluções para a indústria 4.0.</span>
+                </div>
+                <div class="newsletter-advantage">
+                    <i class="fa-solid fa-check"></i>
+                    <span>Entrevistas com profissionais de diversas áreas relacionadas a tecnologia.</span>
+                </div>
+            </div>
+            <div class="newsletter-page-event">
+                <div class="form-field">
+                    <div style="display: flex; justify-content: space-between; align-items:baseline;">
+                        <label class="form-label">Endereço de e-mail</label>
+                        <small id="small-alert" style="display:none;">É necessário informar um e-mail válido</small>
+                    </div>
+                    <input onkeyup="onKeyUpEmail()" id="input-user-email" class="form-input" type="text"
+                        placeholder="ex.: ebolacha@naobiscoito.com" />
+                </div>
+                <button id="button-subscribe" onclick="subscribe()" class="newsletter-action-button">
+                    Inscrever-se
+                </button>
+            </div>
+        </div>
+        <div class="newsletter-banner">
+            <img src="src/images/background.png" class="newsletter-banner-image" />
+        </div>
+    </section>
+    <div id="alert-container" style="display: none;"></div>
+    <div id="modal-container" style="display: none;">
+        <div class="modal">
+            <div class="modal-header">
+                <i class="fa fa-check" style="background: var(--primary-color);
+                padding: 10px;
+                border-radius: 30px;
+                color: white;"></i>
+                <h1>Obrigado por sua inscrição!</h1>
+            </div>
+            <div class="modal-body">
+                Um e-mail de confirmação foi enviado para <span id="subscribed-email"></span>. Por favor, abra-o e
+                clique no botão para
+                confirmar sua inscrição.
+            </div>
+            <div class="modal-footer">
+                <button onclick="closeModal();">Fechar mensagem</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

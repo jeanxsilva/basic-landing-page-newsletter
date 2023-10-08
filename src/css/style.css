@@ -1,0 +1,341 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #8113dc;
+    --secondary-color: #b238f0;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+    min-height: 100vh;
+    background: ghostwhite;
+}
+
+input,
+select,
+button {
+    border-radius: 2px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc;
+}
+
+button,
+a {
+    cursor: pointer;
+}
+
+#main-screen {
+    display: flex;
+    min-height: 100vh;
+}
+
+#main-screen>div {
+    min-height: 100%;
+    overflow-y: hidden;
+}
+
+h1.newsletter-title {
+    font-size: 3em;
+    margin: 20px 0;
+    color: var(--primary-color);
+}
+
+.newsletter-description {}
+
+.newsletter-advantage-list {
+    margin-top: 40px;
+}
+
+.newsletter-page-event {
+    margin-top: 100px;
+    width: 100%;
+}
+
+.newsletter-details {
+    padding: 3%;
+    width: 60%;
+}
+
+.newsletter-banner {
+    width: 40%;
+}
+
+.newsletter-banner-image {
+    height: 100%;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.form-field {
+    max-width: 100%;
+    margin-bottom: 10px;
+}
+
+.form-label {
+    display: block;
+    font-weight: 600;
+    font-size: 1em;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.newsletter-advantage {
+    margin-bottom: 10px;
+}
+
+.newsletter-advantage .fa-check {
+    padding: 3px 4px;
+    border-radius: 10px;
+    background: var(--secondary-color);
+    color: white;
+    margin-right: 5px;
+}
+
+.form-input {
+    width: 98%;
+    padding: 13px 5px;
+    font-size: 1em;
+}
+
+.form-input:focus-visible {
+    outline: 2px solid var(--primary-color);
+}
+
+.newsletter-action-button {
+    padding: 15px;
+    width: 100%;
+    color: white;
+    background: linear-gradient(140deg, #cb73f7 15%, var(--secondary-color) 25%, var(--primary-color) 50%, #7900dd 65%);
+    background-size: 120%;
+    transition: filter 0.5s ease-out;
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+.newsletter-action-button:hover {
+    /* background-position-x: -100px; */
+    filter: hue-rotate(22deg);
+}
+
+#small-alert.invalid {
+    color: rgb(255, 53, 53);
+    font-weight: 600;
+}
+
+input.invalid {
+    outline: 2px solid rgb(255, 53, 53) !important;
+}
+
+#alert-container {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    margin: 10px;
+    right: 0;
+    min-height: 100px;
+    min-width: 120px;
+    max-width: 240px;
+    background: rgba(229, 25, 25, 0.7);
+    z-index: 99;
+    padding: 10px;
+    border-radius: 2px;
+    color: white;
+    box-shadow: 0 0 5px rgba(229, 25, 25);
+    transition: all 0.9s;
+}
+
+.alert-title h4 {
+    margin: 0 auto;
+}
+
+.alert-message p {
+    margin: 5px 0px;
+}
+
+.alert-action button {
+    background: none;
+    border: none;
+    color: white;
+    border-bottom: 2px solid white;
+    padding: 5px;
+    width: 100%;
+    font-weight: 600;
+}
+
+#modal-container {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000000a1;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+
+small#small-alert {
+    font-size: 0.8em;
+}
+
+.modal {
+    display: block;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    min-height: 20%;
+    width: 400px;
+}
+
+.modal .modal-header {
+    color: var(--primary-color);
+}
+
+.modal .modal-body {
+    margin: 20px 0;
+}
+
+.modal .modal-body #subscribed-email {
+    font-weight: 600;
+}
+
+.modal .modal-footer button {
+    padding: 13px;
+    text-transform: uppercase;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 2px;
+    color: white;
+    font-weight: 600;
+    width: 100%;
+}
+
+/* Extra small devices (phones, 200px and down) */
+@media only screen and (max-width: 300px) {
+    body {
+        font-size: 9px;
+    }
+
+    .newsletter-banner {
+        max-height: 90px;
+    }
+}
+
+@media only screen and (min-width: 301px) and (max-width: 600px) {
+    body {
+        font-size: 13px;
+    }
+
+    .newsletter-banner {
+        max-height: 130px;
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    #main-screen {
+        flex-direction: column-reverse;
+        justify-content: start;
+    }
+
+    .newsletter-details {
+        width: initial;
+    }
+
+    .newsletter-page-event {
+        margin-top: 50px;
+    }
+
+    .newsletter-advantage-list {
+        margin-top: 30px;
+    }
+
+    .newsletter-banner {
+        width: 100%;
+        border-radius: 0px 0px 20px 20px;
+    }
+
+    #modal-container {
+        align-items: start;
+        overflow: hidden;
+    }
+
+    .modal {
+        padding: 20px;
+        min-height: 20%;
+        width: 100%;
+        height: 100%;
+        border-radius: 0px;
+    }
+
+    .modal-header h1 {
+        line-height: 35px;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+    body {
+        font-size: 12px;
+    }
+
+    #main-screen {
+        flex-direction: column-reverse;
+        justify-content: start;
+    }
+
+    .newsletter-details {
+        width: initial;
+    }
+
+    .newsletter-banner {
+        width: 100%;
+        border-radius: 0px 0px 40px 40px;
+        max-height: 300px;
+    }
+
+    #modal-container {
+        align-items: start;
+    }
+
+    .modal {
+        padding: 6%;
+        min-height: 20%;
+        width: 400px;
+        height: 94%;
+        border-radius: 0px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    body {
+        font-size: 14px;
+    }
+
+    #main-screen {
+        flex-direction: column-reverse;
+        justify-content: start;
+    }
+
+    .newsletter-details {
+        width: initial;
+    }
+
+    .newsletter-banner {
+        width: 100%;
+        border-radius: 0px 0px 40px 40px;
+        max-height: 200px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
